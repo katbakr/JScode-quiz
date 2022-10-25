@@ -209,3 +209,12 @@ answersEl.addEventListener("click", function (event) {
 submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     var initials = userInitials.value.trim();
+    if (initials) {
+        var userScore = { username: initials, userScore: finalScore };
+        //userInitials.value = "";
+        highScores = JSON.parse(localStorage.getItem("scores")) || [];
+        highScores.push(userScore);
+        localStorage.setItem("scores", JSON.stringify(highScores));
+        showFinalScore();
+      }
+    });
