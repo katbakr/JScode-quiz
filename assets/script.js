@@ -152,3 +152,30 @@ function isCorrect(chosenAnswer) {
       messageEl.remove();
     }, 1000);
   }
+
+  //function for game over/timer ran out==============================================================
+function gameOver() {
+    show(returnBtn);
+    finalScore.textContent = score + time;
+    stopTimer();
+    questionBox.style.display = "none";
+    results.style.display = "flex";
+  }
+  
+  
+  
+  //random functions for hiding and showing elements (landing, questionBox, results)=======
+  //better placement?
+  function hide(element) {
+    element.style.display = "none";
+  }
+  
+  //displays element
+  function show(element) {
+    element.style.display = "block";
+  }
+  
+  
+  //================================================================================================
+
+  
