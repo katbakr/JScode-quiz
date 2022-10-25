@@ -108,4 +108,27 @@ function startGame() {
     show(questionBox);
   }
   
+  function getQuestion() {
+    currentQuestion++;
+    if (currentQuestion < myQuestions.length) {
+      answersEl.innerHTML = "";
+      displayQuestion();
+    } else {
+      gameOver();
+    }
+  
+    function displayQuestion() {
+      question.textContent = myQuestions[currentQuestion].title;
+      for (i = 0; i < myQuestions[currentQuestion].answers.length; i++) {
+        var posAnswer = myQuestions[currentQuestion].answers[i];
+        var posAnswerBtn = document.createElement("button");
+        // posAnswerBtn.setAttribute("class", "forclick") adding style to buttons during button creation
+        //122 from TA for button click
+        posAnswerBtn.setAttribute("value", posAnswer);
+        posAnswerBtn.textContent = posAnswer;
+        answersEl.appendChild(posAnswerBtn);
+      }
+    }
+  }
+
 
