@@ -131,4 +131,24 @@ function startGame() {
     }
   }
 
+//for display message set time out for correct or wrong
+//after time out show message ="" (.textContent)
 
+function isCorrect(chosenAnswer) {
+    if (myQuestions[currentQuestion].correctAnswer == chosenAnswer.value) {
+      score += 10;
+      rightWrongMessage("Good Job! That was correct.");
+    } else {
+      time -= 10;
+      rightWrongMessage("Nice Try! You'll get it next time.");
+    }
+  }
+  
+  function rightWrongMessage(v) {
+    var messageEl = document.createElement("div");
+    messageEl.textContent = v;
+    document.querySelector(".isCorrectMessage").appendChild(messageEl);
+    setTimeout(function () {
+      messageEl.remove();
+    }, 1000);
+  }
