@@ -108,7 +108,8 @@ function startGame() {
 }
 
 function getQuestion() {
-  currentQuestion++;
+  hide(results);
+    currentQuestion++;
   if (currentQuestion < myQuestions.length) {
     answersEl.innerHTML = "";
     displayQuestion();
@@ -149,6 +150,7 @@ function displayMessage(v) {
     messageEl.remove();
   }, 1000);
 }
+
 
 //function for game over/timer ran out
 function gameOver() {
@@ -197,6 +199,18 @@ viewHighScoresBtnEl.addEventListener("click", function () {
   stopTimer();
 });
 
+returnBtn.addEventListener("click", function() {
+  hide(viewHighScoresBtnEl);
+  show(intro);
+  hide(questionBox);
+  hide(results);
+  hide(timer); 
+  hide(returnBtn);
+  hide(results);
+  show(viewHighScoresBtnEl);
+  show(timer);
+})
+
 startBtn.onclick = startGame;
 
 answersEl.addEventListener("click", function (event) {
@@ -211,7 +225,6 @@ submitBtn.addEventListener("click", function (event) {
     var initials = userInitials.value.trim();
     if (initials) {
         var userScore = { username: initials, userScore: finalScore };
-        //userInitials.value = "";
         highScores = JSON.parse(localStorage.getItem("scores")) || [];
         highScores.push(userScore);
         localStorage.setItem("scores", JSON.stringify(highScores));

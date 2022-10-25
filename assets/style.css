@@ -1,7 +1,129 @@
 * {
+    font-family: monospace;
+    font-size: 20px;
+    margin: 2px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+    background-color: rgb(44, 79, 233);
+    padding-right: 45px;
+}
+
+.timer {
+    display: none;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+#return {
+    display: none;
+}
+
+button {
+    padding:5px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: rgb(227, 230, 255);
+    color: rgb(28, 34, 69);
+    border: 10px;
+    border-color: rgb(36, 50, 77);
+}
+button:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+}
+
+.timer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+h1 {
+    padding: 15px;
+}
+
+#intro {
+    margin-left: 30%;
+    margin-right: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+}
+
+#intro h1 {
+    background-color: rgb(249, 141, 10);
+    border-radius: 5px;
+    border-color: rgb(251, 235, 188);
+    padding: 20px;
+}
+
+#intro p {
+    padding: 20px;
+}
+
+#intro button {
+    padding: 10px;
+    background-color: rgb(249, 141, 10);
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.quizBox {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(233, 169, 97);
+    color: white;
+}
+
+#questionBox {
+    background-color: rgb(49, 63, 92);
+    color: white;
+  }
+  
+
+.resultBox {
+    background-color: rgb(35, 43, 78);
+    margin-left: 20%;
+    margin-right: 20%;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+
+
+/* * {
   font-family: monospace;
-  /* font-size: 20px; */
-  margin: 2px;
+  margin: 0px;
+  background-color: rgb(255, 255, 254)
 }
 
 header {
@@ -10,18 +132,26 @@ header {
   font-size: 30px;
   color: white;
   padding: 20px;
-  background-color: rgb(233, 169, 97);
+  background-color: rgb(44, 79, 233);
   padding-right: 45px;
 }
 
+button {
+    padding:5px;
+    font-size: 18px;
+    margin: 10px;
+}
 .timer {
   display: none;
   flex-direction: column;
   font-size: 20px;
 }
 
-button {
-  background-color: rgb(0, 0, 0);
+header button {
+  background-color: rgb(238, 174, 56);
+  border-color:rgb(238, 174, 56);
+  border-radius: 5px;
+  margin: 0px;
   color: white;
   padding: 10px;
   font-size: 20px;
@@ -34,10 +164,18 @@ button {
 }
 
 #intro {
-  display: flex;
+  margin-left: 30%;
+  margin-right: 30%;
+    display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px;
+}
+#intro h1 {
+    background-color: rgb(249, 141, 10);
+    border-radius: 5px;
+    border-color: rgb(251, 235, 188);
+  padding: 20px;  
 }
 
 #intro p {
@@ -46,7 +184,7 @@ button {
 
 #intro button {
   padding: 10px;
-  /* background-color: rgb(233, 169, 97); */
+  background-color: rgb(249, 141, 10);
 }
 
 .hide {
@@ -57,10 +195,7 @@ button {
   display: flex;
 }
 
-h1 {
-  background-color: rgb(233, 169, 97);
-  padding: 15px;
-}
+
 
 #answers {
   display: flex;
@@ -80,11 +215,18 @@ h1 {
   background-color: rgb(233, 169, 97);
   color: white;
 }
+#questionBox h1 {
+    background-color: rgb(238, 174, 56);
+}
 
 .resultBox {
   background-color: rgb(233, 169, 97);
   color: white;
   display: none;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+  
 }
+
+/*
