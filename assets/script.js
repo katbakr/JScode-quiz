@@ -65,3 +65,33 @@ var startBtn = document.getElementById("startBtn");
 var submitBtn = document.getElementById("submitIntials");
 var scoreBoxEl = document.getElementById("scoreBox");
 var userHighScores = document.getElementById("scores");
+
+//variables for questions=================================================================================================
+var currentQuestion = 0;
+var score = 0;
+var questionNumber = 0;
+var currentTime = 0;
+var highScores = [];
+
+//variables for timer
+var qIndex = 0;
+var time = myQuestions.length * 15;
+var timerId;
+
+//functions for timer start/stop ======================================================================================
+function clock() {
+    time--;
+    timeEl.textContent = time;
+    if (time <= 0) {
+      gameOver();
+    }
+  }
+  
+  function startTimer() {
+    timerId = setInterval(clock, 1000);
+    timeEl.textContent = time;
+  }
+  
+  function stopTimer() {
+    clearInterval(timerId);
+  }
