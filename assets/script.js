@@ -95,3 +95,17 @@ function clock() {
   function stopTimer() {
     clearInterval(timerId);
   }
+
+//functions for hide landing page and display question =============================================================
+function startGame() {
+    intro.style.display = "none";
+    questionBox.style.display = "block";
+    question.style.display = "block";
+    startTimer();
+    getQuestion();
+    hide(intro);
+    hide(returnBtn);
+    show(questionBox);
+  }
+  
+
