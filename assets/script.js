@@ -187,16 +187,25 @@ function addFinalScore() {
 
 //Event Listeners
 viewHighScoresBtnEl.addEventListener("click", function () {
-    hide(viewHighScoresBtnEl);
-    hide(intro);
-    hide(questionBox);
-    hide(results);
-    hide(timer);
-    show();
-    addFinalScore();
-    stopTimer();
-    ;
-  });
-  
-  startBtn.onclick = startGame;
-  
+  hide(viewHighScoresBtnEl);
+  hide(intro);
+  hide(questionBox);
+  hide(results);
+  hide(timer);
+  show();
+  addFinalScore();
+  stopTimer();
+});
+
+startBtn.onclick = startGame;
+
+answersEl.addEventListener("click", function (event) {
+  if (event.target.matches("button")) {
+    isCorrect(event.target);
+    getQuestion();
+  }
+});
+
+submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    var initials = userInitials.value.trim();
